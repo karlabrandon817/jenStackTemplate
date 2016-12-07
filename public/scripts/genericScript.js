@@ -13,9 +13,10 @@ $(document).ready(function() {
             url: '/testGet',
             success: function(response) {
                 console.log('back from get call:', response);
+
                 for (var i = 0; i < response.length; i++) {
                     var outputText = '';
-                    outputText += '<p>' + response[i].eventName + ' ' + response[i].athleteName + ' ' + response[i].award + '</p>';
+                    outputText += '<p>' + response[i].athleteName + ' ' + response[i].eventName + ' ' + response[i].award + '</p>';
                 }
                 $('#container').append(outputText);
             },
@@ -61,4 +62,10 @@ $(document).ready(function() {
         postData();
     }); // end testGetButton
 
+    $('#alphaButton').on('click', function(sortArray) {
+        console.log('alphaButton');
+
+        $("#container").html(awardArray.sort());
+    });
 }); //end doc ready
+//end doc ready
