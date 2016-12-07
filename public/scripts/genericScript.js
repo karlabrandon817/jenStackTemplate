@@ -15,9 +15,9 @@ $(document).ready(function() {
                 console.log('back from get call:', response);
                 for (var i = 0; i < response.length; i++) {
                     var outputText = '';
-                    outputText += '<p>' + response[i].award + '</p>';
+                    outputText += '<p>' + response[i].eventName + ' ' + response[i].athleteName + ' ' + response[i].award + '</p>';
                 }
-                $('#container').html(outputText);
+                $('#container').append(outputText);
             },
             error: function() {
                 console.log('error with ajax call...');
